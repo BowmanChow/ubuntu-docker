@@ -12,4 +12,4 @@ RUN ["chmod", "+x", "/scripts/start.sh"]
 ENTRYPOINT ["/scripts/start.sh"]
 
 RUN apt update \
- && apt install -y libxtst6 tmux
+ && apt install -y libxtst6 tmux git
