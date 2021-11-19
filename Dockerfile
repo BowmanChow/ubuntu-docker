@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM kkrizka/vivado:2019.1
 
 RUN apt update \
  && apt install -y ssh
@@ -10,3 +10,6 @@ COPY authorized_keys /root/.ssh/
 COPY start.sh /scripts/start.sh
 RUN ["chmod", "+x", "/scripts/start.sh"]
 ENTRYPOINT ["/scripts/start.sh"]
+
+RUN apt update \
+ && apt install -y libxtst6 tmux
