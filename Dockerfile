@@ -1,4 +1,4 @@
-FROM kkrizka/vivado:2019.1
+FROM kkrizka/vivado:2019.2
 
 RUN apt update \
  && apt install -y ssh
