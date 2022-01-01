@@ -1,23 +1,22 @@
 {
-	"inbounds": [
-	  {
-		"port": 16823,
-		"protocol": "vmess",
-		"settings": {
-		  "clients": [
-			{
-			  "id": "735e06be-1676-490f-9aa2-f182a68df973",
-			  "alterId": 64
-			}
-		  ]
-		}
-	  }
-	],
-	"outbounds": [
-	  {
-		"protocol": "freedom",
-		"settings": {}
-	  }
-	]
-  }
-  
+  "inbounds": [
+    {
+      "port": 16823,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "735e06be-1676-490f-9aa2-f182a68df973",
+            "alterId": 64
+          }
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    }
+  ]
+}
