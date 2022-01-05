@@ -1,0 +1,29 @@
+version: '3'
+services:
+  docker:
+    image: bowmanchow/ubuntu:ssh
+    build:
+      context: .
+      args:
+        BUILDKIT_PROGRESS: plain
+        # ALL_PROXY: socks5://docker.for.mac.localhost:1086
+        # http_proxy: http://docker.for.mac.localhost:1087
+        # https_proxy: http://docker.for.mac.localhost:1087
+    ports:
+      - "2222:22"
+    privileged: true
+    environment:
+      - DISPLAY=docker.for.mac.localhost:0
+      - ALL_PROXY=socks5://docker.for.mac.localhost:1086
+      - http_proxy=http://docker.for.mac.localhost:1087
+      - https_proxy=http://docker.for.mac.localhost:1087
+    volumes:
+      - type: volume
+        source: vscode-server
+        target: /root/.vscode-server
+
+
+volumes:
+  vscode-server:
+    external: true
+    name: vscode-server
