@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        ALL_PROXY: socks5://host.docker.internal:1087
+        ALL_PROXY: socks5://host.docker.internal:1086
         # http_proxy: http://host.docker.internal:1087
         # https_proxy: http://host.docker.internal:1087
     ports:
