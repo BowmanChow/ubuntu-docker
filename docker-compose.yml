@@ -5,18 +5,18 @@ services:
     build:
       context: .
       args:
-        BUILDKIT_PROGRESS: plain
-        # ALL_PROXY: socks5://docker.for.mac.localhost:1086
-        # http_proxy: http://docker.for.mac.localhost:1087
-        # https_proxy: http://docker.for.mac.localhost:1087
+        ALL_PROXY: socks5://host.docker.internal:1087
+        # http_proxy: http://host.docker.internal:1087
+        # https_proxy: http://host.docker.internal:1087
     ports:
       - "2222:22"
-    privileged: true
+    # privileged: true
     environment:
-      - DISPLAY=docker.for.mac.localhost:0
-      - ALL_PROXY=socks5://docker.for.mac.localhost:1086
-      - http_proxy=http://docker.for.mac.localhost:1087
-      - https_proxy=http://docker.for.mac.localhost:1087
+      - PROXY_IP=host.docker.internal
+      - DISPLAY=${PROXY_IP}:0
+      - ALL_PROXY=socks5://${PROXY_IP}:1086
+      # - http_proxy=http://${PROXY_IP}:1087
+      # - https_proxy=http://${PROXY_IP}:1087
     volumes:
       - type: volume
         source: vscode-server
