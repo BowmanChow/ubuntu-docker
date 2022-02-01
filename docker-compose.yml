@@ -1,7 +1,7 @@
 version: '3'
 services:
   docker:
-    image: bowmanchow/ubuntu:ssh
+    image: bowmanchow/ubuntu:c-python
     build:
       context: .
       args:
