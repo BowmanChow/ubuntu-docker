@@ -1,7 +1,7 @@
 version: '3'
 services:
   docker:
-    image: bowmanchow/ubuntu:ssh
+    image: bowmanchow/ubuntu:rust-qemu
     build:
       context: .
       args:
