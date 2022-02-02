@@ -2,17 +2,18 @@ version: '3'
 services:
   docker:
     image: bowmanchow/ubuntu:ssh
+    container_name: ssh
     build:
       context: .
+      dockerfile: Dockerfile
       args:
-        ALL_PROXY: socks5://host.docker.internal:1086
-        # http_proxy: http://host.docker.internal:1087
-        # https_proxy: http://host.docker.internal:1087
+        ALL_PROXY: socks5://${PROXY_IP}:1086
+        # http_proxy: http://${PROXY_IP}:1087
+        # https_proxy: http://${PROXY_IP}:1087
     ports:
       - "2222:22"
     # privileged: true
     environment:
-      - PROXY_IP=host.docker.internal
       - DISPLAY=${PROXY_IP}:0
       - ALL_PROXY=socks5://${PROXY_IP}:1086
       # - http_proxy=http://${PROXY_IP}:1087

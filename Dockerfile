@@ -1,7 +1,8 @@
 FROM ubuntu:rolling
 
-RUN apt update \
- && apt install -y ssh
+RUN apt update && apt install -y \
+    ssh \
+ && rm -rf /var/lib/apt/lists/*
 RUN echo "Port 22" >> /etc/ssh/ssh_config \
  && echo "PubkeyAuthentication yes" >> /etc/ssh/ssh_config
 
