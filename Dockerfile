@@ -1,6 +1,6 @@
 FROM ubuntu:rolling
 
-RUN apt update && apt install -y \
+RUN apt update && apt install -y --no-install-recommends \
     ssh \
  && rm -rf /var/lib/apt/lists/*
 RUN echo "Port 22" >> /etc/ssh/ssh_config \
