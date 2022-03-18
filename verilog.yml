@@ -1,0 +1,8 @@
+version: '3'
+services:
+  docker:
+    image: bowmanchow/ubuntu:verilog
+    container_name: verilog
+    build:
+      context: .
+      dockerfile: verilog.dockerfile

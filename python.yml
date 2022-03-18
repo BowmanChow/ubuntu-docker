@@ -1,0 +1,8 @@
+version: '3'
+services:
+  docker:
+    image: bowmanchow/ubuntu:python
+    container_name: python
+    build:
+      context: .
+      dockerfile: python.dockerfile
