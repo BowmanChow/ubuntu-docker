@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        ALL_PROXY: socks5://${PROXY_IP}:1086
+      # args:
+      #   ALL_PROXY: socks5://${PROXY_IP}:1086
         # http_proxy: http://${PROXY_IP}:1087
         # https_proxy: http://${PROXY_IP}:1087
     ports:
@@ -15,7 +15,7 @@ services:
     # privileged: true
     environment:
       - DISPLAY=${PROXY_IP}:0
-      - ALL_PROXY=socks5://${PROXY_IP}:1086
+      # - ALL_PROXY=socks5://${PROXY_IP}:1086
       # - http_proxy=http://${PROXY_IP}:1087
       # - https_proxy=http://${PROXY_IP}:1087
     volumes:
