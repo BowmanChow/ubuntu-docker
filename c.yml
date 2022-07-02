@@ -1,8 +1,0 @@
-version: '3'
-services:
-  docker:
-    image: bowmanchow/ubuntu:c
-    container_name: c
-    build:
-      context: .
-      dockerfile: c.dockerfile

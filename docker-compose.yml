@@ -3,11 +3,11 @@ services:
   docker:
     env_file:
       - ./.env
-    image: bowmanchow/ubuntu:ssh
-    container_name: ssh
+    image: bowmanchow/ubuntu:${TAG}
+    container_name: ubuntu_${TAG}
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ${TAG}.dockerfile
       args:
         UBUNTU_VERSION: ${UBUNTU_VERSION}
         # ALL_PROXY: socks5://${PROXY_IP}:1086
