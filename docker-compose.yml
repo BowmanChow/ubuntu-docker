@@ -1,13 +1,16 @@
 version: '3'
 services:
   docker:
+    env_file:
+      - ./.env
     image: bowmanchow/ubuntu:ssh
     container_name: ssh
     build:
       context: .
       dockerfile: Dockerfile
-      # args:
-      #   ALL_PROXY: socks5://${PROXY_IP}:1086
+      args:
+        UBUNTU_VERSION: ${UBUNTU_VERSION}
+        # ALL_PROXY: socks5://${PROXY_IP}:1086
         # http_proxy: http://${PROXY_IP}:1087
         # https_proxy: http://${PROXY_IP}:1087
     ports:
